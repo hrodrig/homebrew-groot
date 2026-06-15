@@ -11,16 +11,16 @@ cask "groot" do
     `groot --print-sample-config > ~/.config/groot/groot.yml`.
   EOS
 
-  version "0.6.1"
+  version "0.7.0"
 
   on_macos do
     on_intel do
-      sha256 "3701ee30e2d245f2f544d0615da1b6b4afb4d1bd25c3634dda144b272d986871"
+      sha256 "9726d113f90be63824fb9e379a1fc65c67c9c7df81fb34bd2d6981e5c2bdef9e"
       url "https://github.com/hrodrig/groot/releases/download/v#{version}/groot_v#{version}_darwin_amd64.tar.gz",
         verified: "github.com/hrodrig/groot/"
     end
     on_arm do
-      sha256 "5de5bb784ce35199e39c310a25db4f339d00492ed24e73a67d58ef223de9fe94"
+      sha256 "6ffa219e33e805b8cca41186d42a5b4a165ba7bc0556d7afcd0171d2b73aab3b"
       url "https://github.com/hrodrig/groot/releases/download/v#{version}/groot_v#{version}_darwin_arm64.tar.gz",
         verified: "github.com/hrodrig/groot/"
     end
@@ -28,12 +28,12 @@ cask "groot" do
 
   on_linux do
     on_intel do
-      sha256 "62156aa1e654772986b90719831151271c9506172646cdaaabab5504c9b6a538"
+      sha256 "2ac84b4566b6996433e4447a0c881133e8c2ce8f51825d7c9e512d41f2350a6e"
       url "https://github.com/hrodrig/groot/releases/download/v#{version}/groot_v#{version}_linux_amd64.tar.gz",
         verified: "github.com/hrodrig/groot/"
     end
     on_arm do
-      sha256 "0ed4a40f77bc6187e170546873e5a5907169ab0471bebbf4b9a29f8a3be202c6"
+      sha256 "b4c3b36d9e1dd6b1a1e5955f2c340c9e8ae079af913dc2532a0ee1a9055e3abb"
       url "https://github.com/hrodrig/groot/releases/download/v#{version}/groot_v#{version}_linux_arm64.tar.gz",
         verified: "github.com/hrodrig/groot/"
     end
