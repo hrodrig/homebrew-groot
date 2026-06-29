@@ -7,16 +7,16 @@ cask "groot" do
     `groot --print-sample-config > ~/.config/groot/groot.yml`.
   EOS
 
-  version "0.8.0"
+  version "0.9.2"
 
   on_macos do
     on_intel do
-      sha256 "c500e0926e987a42eff230d60509787cc751aec97b36275888c5f2d3fee003bf"
+      sha256 "51070763b09d1a123c67aeefc02663aba60e84bc7849e302045ba4cc1a622d70"
       url "https://github.com/hrodrig/groot/releases/download/v#{version}/groot_v#{version}_darwin_amd64.tar.gz",
         verified: "github.com/hrodrig/groot/"
     end
     on_arm do
-      sha256 "954737514d30f60febddf4e37a2f642417bc3a6983b453645d3b849410351a71"
+      sha256 "51cce50363a7521dfe84ee090fb3af3807ff13cac120d11ba4e1458272b30eca"
       url "https://github.com/hrodrig/groot/releases/download/v#{version}/groot_v#{version}_darwin_arm64.tar.gz",
         verified: "github.com/hrodrig/groot/"
     end
@@ -24,19 +24,19 @@ cask "groot" do
 
   on_linux do
     on_intel do
-      sha256 "8dd8a408aed9121914f8b0f8741dd90e099df7695d28da67992a22cf4162867b"
+      sha256 "ecbca44da6e1493a4e71754ddd5fc2b0e28b286fcd1a8e3aa297baf85a5d4533"
       url "https://github.com/hrodrig/groot/releases/download/v#{version}/groot_v#{version}_linux_amd64.tar.gz",
         verified: "github.com/hrodrig/groot/"
     end
     on_arm do
-      sha256 "175f16154db0ccbd6b79a707bcd498675c7e97778b5ed05296e23159101816b7"
+      sha256 "b7a70c88c7cbd6d245f9161a52e10bd29a4cc5316ab9f15172596f6eb7929488"
       url "https://github.com/hrodrig/groot/releases/download/v#{version}/groot_v#{version}_linux_arm64.tar.gz",
         verified: "github.com/hrodrig/groot/"
     end
   end
 
   name "groot"
-  desc "Read-only log and context collector for Kubernetes"
+  desc "Read-only log and context collector for Kubernetes (also ships the kubectl-groot plugin)"
   homepage "https://github.com/hrodrig/groot"
 
   livecheck do
@@ -44,6 +44,7 @@ cask "groot" do
   end
 
   binary "groot"
+  binary "kubectl-groot"
 
   postflight do
     if OS.mac?
