@@ -7,25 +7,25 @@ cask "groot" do
     `groot --print-sample-config > ~/.config/groot/groot.yml`.
   EOS
 
-  version "1.2.0"
+  version "1.2.1"
 
   on_macos do
     on_arm do
-      sha256 "9f779a01a3b58bcbbef81611e22d2ea1e43c543f8687bc52b2998c45949c0d99"
+      sha256 "deb9cd0807f761c395a078f4fcb407172a3957f05c53889f8e692a40814332a5"
       url "https://github.com/hrodrig/groot/releases/download/v#{version}/groot_v#{version}_darwin_arm64.tar.gz"
     end
     on_intel do
-      sha256 "89fddbea49744d1251c62c0e29327d2e09667daf181dbba52e7a04ce7282009e"
+      sha256 "8e34738ed066351292ee3cc4ec201905d9e88694ce92f561394210065114d6da"
       url "https://github.com/hrodrig/groot/releases/download/v#{version}/groot_v#{version}_darwin_amd64.tar.gz"
     end
   end
   on_linux do
     on_arm do
-      sha256 "e786a2fd60d1e99071c5cbfd638cdf8802de5579f6bc2f3930cd6c53283d7731"
+      sha256 "e25767fd877c94f0b8fa7ce9920a73eb0e478735d137f4b3aa42e0b1c7b7d019"
       url "https://github.com/hrodrig/groot/releases/download/v#{version}/groot_v#{version}_linux_arm64.tar.gz"
     end
     on_intel do
-      sha256 "a75a48dfb26d2be81c726f08430ae06b60a004f0529bcaa8d685003ac5cbc6ca"
+      sha256 "693dd4b38101d2e4659660fa11a83f4eb03648cda1b47a5f13e97171c9b799d7"
       url "https://github.com/hrodrig/groot/releases/download/v#{version}/groot_v#{version}_linux_amd64.tar.gz"
     end
   end
@@ -42,13 +42,6 @@ cask "groot" do
   binary "kubectl-groot"
   manpage "share/man/man1/groot.1"
   manpage "share/man/man1/kubectl-groot.1"
-
-  postflight do
-    if OS.mac?
-      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/groot"]
-      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/kubectl-groot"]
-    end
-  end
 
   # No zap stanza required
 end
